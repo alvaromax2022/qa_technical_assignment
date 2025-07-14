@@ -1,0 +1,18 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+#Reports
+my-report/*
+test-results/*
+playwright-report/*
+allure-results/*
+
+#Env files
+*.env
+
+#Sonar
+sonar-*
+.scannerwork*

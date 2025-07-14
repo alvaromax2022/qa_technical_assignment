@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "axios": "^1.2.4",
+    "chai": "^4.3.7",
+    "cypress": "^11.1.0",
+    "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/eslint-parser": "^7.5.4",
+    "cypress": "^11.1.0",
+    "dotenv": "^16.0.3",
+    "@playwright/test": "^1.43.1"
+  },
+  "scripts": {
+    "cypress": "npx cypress open --config viewportWidth=1920,viewportHeight=1080",
+    "playwright": "npx playwright test --ui",
+    "backend": "mocha backend/tests"
+  }
+}
