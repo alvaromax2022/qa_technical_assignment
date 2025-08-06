@@ -1,16 +1,16 @@
 {
   "dependencies": {
-    "axios": "^1.2.4",
-    "chai": "^4.3.7",
+    "axios": "^1.11.0",
+    "chai": "^4.5.0",
     "cypress": "^11.1.0",
-    "mocha": "^10.2.0"
+    "mocha": "^10.8.2"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
     "@babel/eslint-parser": "^7.5.4",
+    "@playwright/test": "^1.43.1",
     "cypress": "^11.1.0",
-    "dotenv": "^16.0.3",
-    "@playwright/test": "^1.43.1"
+    "dotenv": "^16.0.3"
   },
   "scripts": {
     "cypress": "npx cypress open --config viewportWidth=1920,viewportHeight=1080",

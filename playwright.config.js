@@ -1,6 +1,6 @@
 // @ts-check
-const {defineConfig, devices} = require('@playwright/test');
-const dotenv = require('dotenv');
+const { defineConfig, devices } = require("@playwright/test");
+const dotenv = require("dotenv");
 dotenv.config();
 
 /**
@@ -13,7 +13,7 @@ dotenv.config();
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  testDir: './frontend-playwright/specs',
+  testDir: "./frontend-playwright/specs",
   timeout: 120000,
   /* Run tests in files in parallel */
   fullyParallel: false,
@@ -25,36 +25,50 @@ module.exports = defineConfig({
   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: [['html', { open: 'never' }]],
-  reporter: [['html']],
+  reporter: [["html"]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     video: {
-      mode: 'retain-on-failure',
+      mode: "retain-on-failure",
       // size: {width: 1920, height: 1080}, //desktop
-      size: {width: 1920, height: 1080},
+      size: { width: 1920, height: 1080 },
     },
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: "chromium",
       use: {
-        ...devices['Desktop Chrome'],
-        viewport: {width: 1920, height: 1080},
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1920, height: 1080 },
         launchOptions: {
           args: [
-            '--start-maximized',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-infobars',
-            '--disable-web-security',
-            '--allow-running-insecure-content',
-            '--disable-dev-shm-usage',
-            '--disable-browser-side-navigation',
-            '--disable-gpu',
+            "--start-maximized",
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-infobars",
+            "--disable-web-security",
+            "--allow-running-insecure-content",
+            "--disable-dev-shm-usage",
+            "--disable-browser-side-navigation",
+            "--disable-gpu",
           ],
         },
+      },
+    },
+    {
+      name: "firefox",
+      use: {
+        ...devices["Desktop Firefox"],
+        viewport: { width: 1920, height: 1080 },
+      },
+    },
+    {
+      name: "webkit",
+      use: {
+        ...devices["Desktop Safari"],
+        viewport: { width: 1920, height: 1080 },
       },
     },
   ],
